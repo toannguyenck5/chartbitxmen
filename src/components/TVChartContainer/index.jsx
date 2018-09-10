@@ -57,13 +57,13 @@ export class TVChartContainer extends React.PureComponent {
 			}
 		};
 
-		//window.TradingView.onready(() => {
+		window.TradingView.onready(() => {
 			const widget = window.tvWidget = new window.TradingView.widget(widgetOptions);
 
 			widget.onChartReady(() => {
 				console.log('Chart has loaded!')
 			});
-		//});
+		});
 	}
 
 	render() {
