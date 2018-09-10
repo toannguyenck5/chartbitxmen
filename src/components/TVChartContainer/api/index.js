@@ -15,15 +15,66 @@ export default {
 	},
 	searchSymbols: (userInput, exchange, symbolType, onResultReadyCallback) => {
 		console.log('====Search Symbols running')
-		var a = {
-			symbol: "oksalem",
-			full_name: "toan nguyen",
-			description: "noi dung",
-			exchange: "change bix",
-			ticker: "btc",
-			type: "type btc",
+
+		var crytocoin = {
+			btc : {
+				symbol: "BTC",
+				full_name: "www.bitxmen.com",
+				description: "Bitcoin",
+				exchange: "BITXMEN.COM",
+				ticker: "BTC",
+				type: "Crypto",
+			},
+			eth : {
+				symbol: "ETH",
+				full_name: "www.bitxmen.com",
+				description: "Ethereum",
+				exchange: "BITXMEN.COM",
+				ticker: "ETH",
+				type: "Crypto",
+			},
+			bch : {
+				symbol: "BCH",
+				full_name: "www.bitxmen.com",
+				description: "Bitcoin Cash",
+				exchange: "BITXMEN.COM",
+				ticker: "BCH",
+				type: "Crypto",
+			},
+			doge : {
+				symbol: "DOGE",
+				full_name: "www.bitxmen.com",
+				description: "Dogecoin",
+				exchange: "BITXMEN.COM",
+				ticker: "DOGE",
+				type: "Crypto",
+			},
+			ltc : {
+				symbol: "LTC",
+				full_name: "www.bitxmen.com",
+				description: "Litecoin",
+				exchange: "BITXMEN.COM",
+				ticker: "LTC",
+				type: "Crypto",
+			},
+			trx : {
+				symbol: "TRX",
+				full_name: "www.bitxmen.com",
+				description: "Tron",
+				exchange: "BITXMEN.COM",
+				ticker: "TRX",
+				type: "Crypto",
+			},
+			usdt : {
+				symbol: "USDT",
+				full_name: "www.bitxmen.com",
+				description: "Tether",
+				exchange: "BITXMEN.COM",
+				ticker: "USDT",
+				type: "Crypto",
+			},
 		}
-		return [{symbol: "oksalem"}]
+		 onResultReadyCallback([crytocoin.btc, crytocoin.eth, crytocoin.doge, crytocoin.usdt, crytocoin.bch, crytocoin.ltc, crytocoin.trx])
 	},
 	resolveSymbol: (symbolName, onSymbolResolvedCallback, onResolveErrorCallback) => {
 		// expects a symbolInfo object in response

@@ -14,7 +14,7 @@ export class TVChartContainer extends React.PureComponent {
 	static defaultProps = {
 		// symbol: 'Coinbase:BTC/USD',
 		// symbol: 'Bitxmen:BTC/VND',
-		symbol: 'BTC',
+		symbol: (window.location.href.split("?")[1] == undefined ? "BTC" : window.location.href.split("?")[1]),
 		interval: 'D', // thời gian giữa 2 nến
 		containerId: 'tv_chart_container',
 		libraryPath: '/charting_library/',
@@ -28,6 +28,7 @@ export class TVChartContainer extends React.PureComponent {
 	};
 
 	componentDidMount() {
+		console.log(window.location.href.split("?")[1])
 		const widgetOptions = {
 			debug: false,
 			symbol: this.props.symbol,
