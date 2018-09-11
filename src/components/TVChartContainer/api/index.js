@@ -110,7 +110,7 @@ export default {
 			description: '',
 			type: 'crypto',
 			session: '24x7',
-			timezone: 'Etc/UTC',
+			timezone: "Asia/Bangkok",//'Etc/UTC',
 			ticker: symbolName,
 			exchange: "BITXMEN",
 			minmov: 1,
