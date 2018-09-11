@@ -9,12 +9,12 @@ const config = {
 
 export default {
 	onReady: cb => {
-	console.log('=====onReady running')	
+	// console.log('=====onReady running')	
 		setTimeout(() => cb(config), 0)
 		
 	},
 	searchSymbols: (userInput, exchange, symbolType, onResultReadyCallback) => {
-		console.log('====Search Symbols running')
+		// console.log('====Search Symbols running')
 
 		var crytocoin = {
 			btc : {
@@ -123,7 +123,7 @@ export default {
 		}
 		setTimeout(function() {
 			onSymbolResolvedCallback(symbol_stub)
-			console.log('Resolving that symbol....', symbol_stub)
+			// console.log('Resolving that symbol....', symbol_stub)
 		}, 0)
 		
 		
@@ -131,7 +131,7 @@ export default {
 
 	},
 	getBars: function(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback, firstDataRequest) {
-		console.log('=====getBars running', symbolInfo)
+		// console.log('=====getBars running', symbolInfo)
 		// console.log('function args',arguments)
 		// console.log(`Requesting bars between ${new Date(from * 1000).toISOString()} and ${new Date(to * 1000).toISOString()}`)
 		historyProvider.getBars(symbolInfo, resolution, from, to, firstDataRequest)
@@ -148,14 +148,14 @@ export default {
 
 	},
 	subscribeBars: (symbolInfo, resolution, onRealtimeCallback, subscribeUID, onResetCacheNeededCallback) => {
-		console.log('=====subscribeBars runnning')
+		// console.log('=====subscribeBars runnning')
 	},
 	unsubscribeBars: subscriberUID => {
-		console.log('=====unsubscribeBars running')
+		// console.log('=====unsubscribeBars running')
 	},
 	calculateHistoryDepth: (resolution, resolutionBack, intervalBack) => {
 		//optional
-		console.log('=====calculateHistoryDepth running')
+		// console.log('=====calculateHistoryDepth running')
 		// while optional, this makes sure we request 24 hours of minute data at a time
 		// CryptoCompare's minute data endpoint will throw an error if we request data beyond 7 days in the past, and return no data
 		return resolution < 60 ? {resolutionBack: 'D', intervalBack: '1'} : undefined
@@ -169,6 +169,6 @@ export default {
 		console.log('=====getTimeScaleMarks running')
 	},
 	getServerTime: cb => {
-		console.log('=====getServerTime running')
+		// console.log('=====getServerTime running')
 	}
 }

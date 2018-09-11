@@ -28,7 +28,6 @@ export class TVChartContainer extends React.PureComponent {
 	};
 
 	componentDidMount() {
-		console.log(window.location.href.split("?")[1])
 		const widgetOptions = {
 			debug: false,
 			symbol: this.props.symbol,
