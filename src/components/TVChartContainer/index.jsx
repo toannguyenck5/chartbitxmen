@@ -46,17 +46,44 @@ export class TVChartContainer extends React.PureComponent {
 			autosize: this.props.autosize,
 			studies_overrides: this.props.studiesOverrides,
 			timezone: "Asia/Bangkok",
+
+			numeric_formatting: { decimal_sign: "." },
+			customFormatters: {
+				// timeFormatter: {
+				// 	format: function (date) { var _format_str = '%h:%m'; return _format_str.replace('%h', date.getUTCHours(), 2).replace('%m', date.getUTCMinutes(), 2).replace('%s', date.getUTCSeconds(), 2); }
+				// },
+				dateFormatter: {
+					format: function (date) { 
+						let month = date.getUTCMonth() + 1 < 10 ? '0' + parseInt(date.getUTCMonth() + 1) : date.getUTCMonth() + 1
+						let day = date.getUTCDate() < 10 ? '0' + date.getUTCDate() : date.getUTCDate()
+						return day + '-' + month + '-' + date.getUTCFullYear() 
+					}
+				}
+			},
+			time_frames: [
+				// { text: "50y", resolution: "6M", description: "50 Years" },
+				// { text: "3y", resolution: "W", description: "3 Years", title: "3yr" },
+				// { text: "8m", resolution: "D", description: "8 Month" },
+				// { text: "3d", resolution: "5", description: "3 Days" },
+				// { text: "1000y", resolution: "W", description: "All", title: "All" },
+			],
+			loading_screen: { backgroundColor: "#000000" },
 			overrides: {
+				// "paneProperties.crossHairProperties.width": "1",
+				"volumePaneSize": "large",
 				// "mainSeriesProperties.showCountdown": true,
+				// "paneProperties.rightAxisProperties.percentage":false,
 				"paneProperties.background": "#131722",
 				"paneProperties.vertGridProperties.color": "#363c4e",
 				"paneProperties.horzGridProperties.color": "#363c4e",
 				"paneProperties.legendProperties.showSeriesOHLC": true,
 				//"paneProperties.legendProperties.showSeriesTitles": false,
-				"symbolWatermarkProperties.transparency": 90,
-				"scalesProperties.textColor" : "#AAA",
+				// "symbolWatermarkProperties.transparency": 90,
+				// "symbolWatermarkProperties.color" : "#944",
+				"scalesProperties.textColor": "#AAA",
 				"mainSeriesProperties.candleStyle.wickUpColor": '#336854',
 				"mainSeriesProperties.candleStyle.wickDownColor": '#7f323f',
+				"mainSeriesProperties.style": 1,
 			}
 		};
 
@@ -72,8 +99,8 @@ export class TVChartContainer extends React.PureComponent {
 	render() {
 		return (
 			<div
-				id={ this.props.containerId }
-				className={ 'TVChartContainer' }
+				id={this.props.containerId}
+				className={'TVChartContainer'}
 			/>
 		);
 	}
