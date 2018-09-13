@@ -67,7 +67,7 @@ export class TVChartContainer extends React.PureComponent {
 				// { text: "3d", resolution: "5", description: "3 Days" },
 				// { text: "1000y", resolution: "W", description: "All", title: "All" },
 			],
-			loading_screen: { backgroundColor: "#000000" },
+			//loading_screen: { backgroundColor: "#000000" },
 			overrides: {
 				// "paneProperties.crossHairProperties.width": "1",
 				"volumePaneSize": "large",
@@ -77,13 +77,15 @@ export class TVChartContainer extends React.PureComponent {
 				// "paneProperties.vertGridProperties.color": "#363c4e",
 				// "paneProperties.horzGridProperties.color": "#363c4e",
 				"paneProperties.legendProperties.showSeriesOHLC": true,
-				//"paneProperties.legendProperties.showSeriesTitles": false,
+				
+				// "paneProperties.legendProperties.showSeriesTitles": false,
 				// "symbolWatermarkProperties.transparency": 90,
 				// "symbolWatermarkProperties.color" : "#944",
-				// "scalesProperties.textColor": "#AAA",
-				// "mainSeriesProperties.candleStyle.wickUpColor": '#336854',
-				// "mainSeriesProperties.candleStyle.wickDownColor": '#7f323f',
-				// "mainSeriesProperties.style": 1,
+				
+				"scalesProperties.textColor": "#AAA",
+				"mainSeriesProperties.candleStyle.wickUpColor": '#336854',
+				"mainSeriesProperties.candleStyle.wickDownColor": '#7f323f',
+				"mainSeriesProperties.style": 1,
 			}
 		};
 
