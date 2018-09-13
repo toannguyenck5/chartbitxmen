@@ -98,7 +98,7 @@ export default {
 			minmov: 1,
 			pricescale: 1,
 			has_intraday: true,
-			intraday_multipliers: ['1', '60'],
+			intraday_multipliers: ['50', '100'],
 			supported_resolution: supportedResolutions,
 			volume_precision: 8,
 			data_status: 'streaming',
